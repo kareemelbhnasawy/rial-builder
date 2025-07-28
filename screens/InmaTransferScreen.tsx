@@ -64,6 +64,10 @@ const InmaTransferScreen: React.FC<InmaTransferScreenProps> = ({
     navigation.navigate('LocalTransfer');
   };
 
+  const handleNavigateToOwn = () => {
+    navigation.navigate('OwnTransfer');
+  };
+
   return (
     <Page
       backgroundColor="#0E0F11"
