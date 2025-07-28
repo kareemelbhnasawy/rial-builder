@@ -8,6 +8,7 @@ import ProductsScreen from './screens/ProductsScreen';
 import PaymentsScreen from './screens/PaymentsScreen';
 import InmaTransferScreen from './screens/InmaTransferScreen';
 import LocalTransferScreen from './screens/LocalTransferScreen';
+import OwnTransferScreen from './screens/OwnTransferScreen';
 import BottomTabBar from './components/organisms/BottomTabBar';
 
 const Tab = createBottomTabNavigator();
