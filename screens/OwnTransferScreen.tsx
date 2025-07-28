@@ -15,29 +15,37 @@ import Page from '../components/organisms/Page';
 
 const transferData = {
   accountFrom: {
-    name: 'Current account for local transfers',
+    name: 'Main account',
     number: '11 2314 4531 3452 9023 6950',
-    balance: '238,000,534.00 SAR',
+    balance: '4,197,206.81 SAR',
   },
   accountTo: {
-    name: 'Jason Green',
-    number: '23 3290 3902 4423 2309 8942',
-    bank: 'Samba Financial Group',
+    name: 'International small expenses',
+    number: '11 2314 4531 3452 9023 5893',
+    balance: '389,298,392.92 USD',
   },
   amount: {
+    integer: '2,999',
+    fractional: '.00',
+    currency: 'USD',
+  },
+  debitAmount: {
     integer: '12,005',
     fractional: '.18',
     currency: 'SAR',
   },
   fee: '0.00 SAR',
+  exchangeRate: '1 USD = 3.75 SAR',
+  exchangeRateDescription:
+    'This exchange rate is not final and could be changed in the execution step',
   total: '12,055.18 SAR',
 };
 
-interface LocalTransferScreenProps {
+interface OwnTransferScreenProps {
   navigation: any;
 }
 
-const LocalTransferScreen: React.FC<LocalTransferScreenProps> = ({
+const OwnTransferScreen: React.FC<OwnTransferScreenProps> = ({
   navigation,
 }) => {
   const handleGoToDashboard = () => {
@@ -56,8 +64,8 @@ const LocalTransferScreen: React.FC<LocalTransferScreenProps> = ({
     navigation.navigate('InmaTransfer');
   };
 
-  const handleNavigateToOwn = () => {
-    navigation.navigate('OwnTransfer');
+  const handleNavigateToLocal = () => {
+    navigation.navigate('LocalTransfer');
   };
 
   return (
@@ -67,7 +75,7 @@ const LocalTransferScreen: React.FC<LocalTransferScreenProps> = ({
       statusBarBg="#0E0F11"
     >
       <View style={styles.screen}>
-        <Header title="Local transfer" onClose={handleClose} />
+        <Header title="OWN TRANSFER" onClose={handleClose} />
 
         <ScrollView
           style={styles.scrollContainer}
@@ -79,7 +87,7 @@ const LocalTransferScreen: React.FC<LocalTransferScreenProps> = ({
                 <View style={styles.notificationSection}>
                   <NotificationCard type="success" message="Pending approval" />
                   <Text style={styles.mainHeading}>
-                    Local transfer has been ordered.
+                    Own transfer has been ordered.
                   </Text>
                 </View>
 
@@ -93,7 +101,7 @@ const LocalTransferScreen: React.FC<LocalTransferScreenProps> = ({
                   status="success"
                 />
 
-                {/* Navigation buttons to test */}
+                {/* Navigation buttons to test other screens */}
                 <View style={styles.navigationButtons}>
                   <TouchableOpacity
                     style={styles.navigationButton}
@@ -105,10 +113,10 @@ const LocalTransferScreen: React.FC<LocalTransferScreenProps> = ({
                   </TouchableOpacity>
                   <TouchableOpacity
                     style={styles.navigationButton}
-                    onPress={handleNavigateToOwn}
+                    onPress={handleNavigateToLocal}
                   >
                     <Text style={styles.navigationButtonText}>
-                      Go to Own Transfer →
+                      Go to Local Transfer →
                     </Text>
                   </TouchableOpacity>
                 </View>
@@ -182,4 +190,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LocalTransferScreen;
+export default OwnTransferScreen;

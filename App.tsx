@@ -8,6 +8,7 @@ import ProductsScreen from './screens/ProductsScreen';
 import PaymentsScreen from './screens/PaymentsScreen';
 import InmaTransferScreen from './screens/InmaTransferScreen';
 import LocalTransferScreen from './screens/LocalTransferScreen';
+import OwnTransferScreen from './screens/OwnTransferScreen';
 import BottomTabBar from './components/organisms/BottomTabBar';
 
 const Tab = createBottomTabNavigator();
@@ -16,13 +17,14 @@ const Stack = createStackNavigator();
 const TransfersStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="InmaTransfer"
+      initialRouteName="OwnTransfer"
       screenOptions={{
         headerShown: false,
       }}
     >
       <Stack.Screen name="InmaTransfer" component={InmaTransferScreen} />
       <Stack.Screen name="LocalTransfer" component={LocalTransferScreen} />
+      <Stack.Screen name="OwnTransfer" component={OwnTransferScreen} />
     </Stack.Navigator>
   );
 };

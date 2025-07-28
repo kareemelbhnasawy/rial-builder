@@ -64,6 +64,10 @@ const InmaTransferScreen: React.FC<InmaTransferScreenProps> = ({
     navigation.navigate('LocalTransfer');
   };
 
+  const handleNavigateToOwn = () => {
+    navigation.navigate('OwnTransfer');
+  };
+
   return (
     <Page
       backgroundColor="#0E0F11"
@@ -97,15 +101,25 @@ const InmaTransferScreen: React.FC<InmaTransferScreenProps> = ({
                   status="success"
                 />
 
-                {/* Navigation button to test */}
-                <TouchableOpacity
-                  style={styles.navigationButton}
-                  onPress={handleNavigateToLocal}
-                >
-                  <Text style={styles.navigationButtonText}>
-                    Go to Local Transfer →
-                  </Text>
-                </TouchableOpacity>
+                {/* Navigation buttons to test */}
+                <View style={styles.navigationButtons}>
+                  <TouchableOpacity
+                    style={styles.navigationButton}
+                    onPress={handleNavigateToLocal}
+                  >
+                    <Text style={styles.navigationButtonText}>
+                      Go to Local Transfer →
+                    </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={styles.navigationButton}
+                    onPress={handleNavigateToOwn}
+                  >
+                    <Text style={styles.navigationButtonText}>
+                      Go to Own Transfer →
+                    </Text>
+                  </TouchableOpacity>
+                </View>
               </View>
             </View>
           </View>
@@ -158,12 +172,15 @@ const styles = StyleSheet.create({
     lineHeight: 30,
     width: '100%',
   },
+  navigationButtons: {
+    gap: 8,
+    marginTop: 16,
+  },
   navigationButton: {
     backgroundColor: '#E6E7EA',
     padding: 16,
     borderRadius: 8,
     alignItems: 'center',
-    marginTop: 16,
   },
   navigationButtonText: {
     color: '#1D2433',
