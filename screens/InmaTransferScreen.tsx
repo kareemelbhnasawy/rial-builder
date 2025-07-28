@@ -172,12 +172,15 @@ const styles = StyleSheet.create({
     lineHeight: 30,
     width: '100%',
   },
+  navigationButtons: {
+    gap: 8,
+    marginTop: 16,
+  },
   navigationButton: {
     backgroundColor: '#E6E7EA',
     padding: 16,
     borderRadius: 8,
     alignItems: 'center',
-    marginTop: 16,
   },
   navigationButtonText: {
     color: '#1D2433',
