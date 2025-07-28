@@ -93,15 +93,25 @@ const LocalTransferScreen: React.FC<LocalTransferScreenProps> = ({
                   status="success"
                 />
 
-                {/* Navigation button to test */}
-                <TouchableOpacity
-                  style={styles.navigationButton}
-                  onPress={handleNavigateToInma}
-                >
-                  <Text style={styles.navigationButtonText}>
-                    Go to Inma Transfer →
-                  </Text>
-                </TouchableOpacity>
+                {/* Navigation buttons to test */}
+                <View style={styles.navigationButtons}>
+                  <TouchableOpacity
+                    style={styles.navigationButton}
+                    onPress={handleNavigateToInma}
+                  >
+                    <Text style={styles.navigationButtonText}>
+                      Go to Inma Transfer →
+                    </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={styles.navigationButton}
+                    onPress={handleNavigateToOwn}
+                  >
+                    <Text style={styles.navigationButtonText}>
+                      Go to Own Transfer →
+                    </Text>
+                  </TouchableOpacity>
+                </View>
               </View>
             </View>
           </View>
