@@ -17,13 +17,14 @@ const Stack = createStackNavigator();
 const TransfersStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="InmaTransfer"
+      initialRouteName="OwnTransfer"
       screenOptions={{
         headerShown: false,
       }}
     >
       <Stack.Screen name="InmaTransfer" component={InmaTransferScreen} />
       <Stack.Screen name="LocalTransfer" component={LocalTransferScreen} />
+      <Stack.Screen name="OwnTransfer" component={OwnTransferScreen} />
     </Stack.Navigator>
   );
 };
